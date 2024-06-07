@@ -163,7 +163,8 @@ class FlickVideoManager extends ChangeNotifier {
         // videoPlayerValue!.position != null &&
         (videoPlayerValue?.isInitialized ?? false) &&
         videoPlayerValue?.duration != null &&
-        (videoPlayerValue!.position) >= videoPlayerValue!.duration) {
+        videoPlayerValue!.position >= videoPlayerValue!.duration &&
+        videoPlayerValue!.position > Duration.zero) {
       if (!_currentVideoEnded) {
         handleVideoEnd();
       }

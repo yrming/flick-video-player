@@ -75,7 +75,7 @@ class FlickControlManager extends ChangeNotifier {
     }
 
     await _videoPlayerController!.play();
-    _flickManager.flickDisplayManager!.handleShowPlayerControls();
+    _flickManager.flickDisplayManager!.hidePlayerControls();
     _notify();
   }
 
@@ -92,8 +92,6 @@ class FlickControlManager extends ChangeNotifier {
   /// Pause the video.
   Future<void> pause() async {
     await _videoPlayerController?.pause();
-    _flickManager.flickDisplayManager!
-        .handleShowPlayerControls(showWithTimeout: false);
     _notify();
   }
 
